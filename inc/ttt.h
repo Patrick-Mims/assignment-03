@@ -13,7 +13,7 @@ int checkBoundary(int a)
     return 0;
 }
 
-void displayBoard(char board[][3])
+void displayBoard(char board[][LENGTH])
 {
     cout << "-------------";
     for (int i = 0; i < LENGTH; i++)
