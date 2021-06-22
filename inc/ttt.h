@@ -15,63 +15,34 @@ int checkBoundary(int a)
 
 void displayBoard(char board[][3])
 {
-    int cnt = 0;
-    int i;
-    int j = 0;
-    int a;
     int b;
-    //do
-    // {
-    for (i = 0; i < LENGTH; i++)
-    {
-        cout << "-";
-        for (j = 0; j < LENGTH; j++)
-        {
-            cout << "-";
-        }
-        cout << "-";
-    }
-    cout << endl;
+
     /*
-        if (cnt < LENGTH)
-            cout << "| "
-                 << board[i][j]
-                 << " | "
-                 << endl;
-                 */
-    for (a = 0; a < LENGTH; a++)
+    for (int i = 0; i < LENGTH; i++)
     {
+        for (int j = 0; j <= LENGTH; j++)
+        {
+            cout << "---";
+        }
+    }
+
+    cout << endl;
+    */
+
+    for (int a = 0; a < LENGTH; a++)
+    {
+        for (b = 0; b <= LENGTH; ++b)
+        {
+            cout << "---";
+        }
+        cout << endl;
         cout << "| ";
         for (b = 0; b < LENGTH; b++)
         {
-            //cout << board[a][b];
             cout << board[a][b] << " | ";
         }
         cout << endl;
     }
-    cout << endl;
-    /*
-                 << "B"
-                 << " | "
-                 << "C"
-                 << " |" << endl;
-                 */
-    cnt += 1;
-    //} while (cnt <= LENGTH);
-
-    /*
-        for (int a = 0; a <= LENGTH; a++)
-        {
-            for (int b = 0; b <= LENGTH; b++)
-            {
-                cout << board[a][b];
-            }
-        }
-        if (cnt < LENGTH)
-            cout << endl
-                 << "|" << setw(WIDTH) << "|" << setw(WIDTH) << "|" << setw(WIDTH) << "|" << endl;
-                 */
-
     cout << endl;
 }
 
