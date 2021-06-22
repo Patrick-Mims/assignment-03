@@ -1,19 +1,34 @@
 #include <iostream>
+#include <iomanip>
+#include "ttt.h"
+
+#define MOVES 9
+
 using namespace std;
 
-bool isWon(char, char[][3]);
-bool isDraw(char[][3]);
 void displayBoard(char[][3]);
 void makeAMove(char[][3], char);
+/*
+bool isWon(char, char[][3]);
+bool isDraw(char[][3]);
+*/
 
-int main()
+int main(void)
 {
-	//
-	//	PLEASE DO NOT CHANGE function main
-	//
-	char board[3][3] = {{' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};
+	char board[3][3] = {
+		{' ', ' ', ' '},
+		{' ', ' ', ' '},
+		{' ', ' ', ' '}};
+
 	displayBoard(board);
 
+	while (1)
+	{
+		makeAMove(board, 'x');
+		displayBoard(board);
+	}
+
+	/*
 	while (true)
 	{
 		// The first player makes a move
@@ -39,12 +54,14 @@ int main()
 			cout << "O player won" << endl;
 			exit(0);
 		}
-		else if (isDraw(board))
+
+		else (isDraw(board))
 		{
 			cout << "No winner" << endl;
 			exit(0);
 		}
-	}
+}
+		*/
 
 	return 0;
 }
