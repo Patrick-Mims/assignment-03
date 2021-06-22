@@ -1,7 +1,6 @@
 #ifndef _TTT_H
 #define _TTT_H
-#define WIDTH 1
-#define LENGTH 3
+#define COLUMN 3
 
 using namespace std;
 
@@ -13,14 +12,14 @@ int checkBoundary(int a)
     return 0;
 }
 
-void displayBoard(char board[][LENGTH])
+void displayBoard(char board[][COLUMN])
 {
     cout << "-------------";
-    for (int i = 0; i < LENGTH; i++)
+    for (int i = 0; i < COLUMN; i++)
     {
         cout << endl;
         cout << "| ";
-        for (int j = 0; j < LENGTH; j++)
+        for (int j = 0; j < COLUMN; j++)
         {
             cout << board[i][j] << " | ";
         }
@@ -47,8 +46,5 @@ void makeAMove(char move[][3], char mark)
 /*
 bool isWon(char, char[][3]);
 bool isDraw(char[][3]);
-void displayBoard(char[][3]);
-void makeAMove(char[][3], char);
 */
-
 #endif

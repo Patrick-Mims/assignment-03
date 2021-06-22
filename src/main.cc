@@ -16,9 +16,9 @@ bool isDraw(char[][3]);
 int main(void)
 {
 	char board[3][3] = {
-		{' ', ' ', ' '},
-		{' ', ' ', ' '},
-		{' ', ' ', ' '}};
+		{'A', 'B', 'C'},
+		{'D', 'E', 'F'},
+		{'G', 'H', 'I'}};
 
 	displayBoard(board);
 
