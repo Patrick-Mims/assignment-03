@@ -15,33 +15,16 @@ int checkBoundary(int a)
 
 void displayBoard(char board[][3])
 {
-    int b;
-
-    /*
-    for (int i = 0; i < LENGTH; i++)
-    {
-        for (int j = 0; j <= LENGTH; j++)
-        {
-            cout << "---";
-        }
-    }
-
-    cout << endl;
-    */
-
+    cout << "-------------";
     for (int a = 0; a < LENGTH; a++)
     {
-        for (b = 0; b <= LENGTH; ++b)
+        cout << endl;
+        for (int b = 0; b < LENGTH; b++)
         {
-            cout << "---";
+            cout << " | " << board[a][b];
         }
         cout << endl;
-        cout << "| ";
-        for (b = 0; b < LENGTH; b++)
-        {
-            cout << board[a][b] << " | ";
-        }
-        cout << endl;
+        cout << "-------------";
     }
     cout << endl;
 }
