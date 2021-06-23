@@ -1,26 +1,26 @@
 #ifndef _TTT_H
 #define _TTT_H
 
-#define THREE 3
+#define INDEX 3
 
 using namespace std;
 
 int checkBoundary(int a)
 {
-    if ((a < 3))
+    if ((a >= 0) && (a < 3))
         return 1;
 
     return 0;
 }
 
-void displayBoard(char board[][THREE])
+void displayBoard(char board[][INDEX])
 {
     cout << "-------------";
-    for (int i = 0; i < THREE; i++)
+    for (int i = 0; i < INDEX; i++)
     {
         cout << endl;
         cout << "| ";
-        for (int j = 0; j < THREE; j++)
+        for (int j = 0; j < INDEX; j++)
         {
             cout << board[i][j] << " | ";
         }
@@ -30,17 +30,27 @@ void displayBoard(char board[][THREE])
     cout << endl;
 }
 
-void makeAMove(char move[][3], char mark)
+void makeAMove(char move[][INDEX], char mark)
 {
-    int c = 0, r = 0;
-    cout << "Enter a row (0, 1, 2) for player X: " << endl;
-    cin >> r;
+    int c = 0, i = 0, r = 0;
+    static int counter = 0;
 
-    if (checkBoundary(r))
+    do
     {
-        cout << "Enter a column (0, 1, 2) for player X: " << endl;
+        cout << "[" << counter << "]"
+             << "Enter a ROW (0, 1, 2) for player [ X ]: " << endl;
+        cin >> r;
+        counter += 1;
+    } while (!checkBoundary(r));
+
+    do
+    {
+        cout << "[" << counter << "]"
+             << "Now enter a COLUMN (0, 1, 2) for player [ X ]: " << endl;
         cin >> c;
-    }
+        counter += 1;
+    } while (!checkBoundary(c));
+
     move[c][r] = mark;
 }
 
