@@ -5,8 +5,9 @@
 
 using namespace std;
 
-int checkBoundary(int a)
+int checkBoundary(int a, int *b)
 {
+    *(b - 1);
     if ((a >= 0) && (a < 3))
         return 1;
 
@@ -32,30 +33,45 @@ void displayBoard(char board[][INDEX])
 
 void makeAMove(char move[][INDEX], char mark)
 {
-    int c = 0, i = 0, r = 0;
+    int i = 0, x = 0, y = 0;
+
     static int counter = 0;
 
     do
     {
-        cout << "[" << counter << "]"
+        cout << "[" << counter << ">"
              << "Enter a ROW (0, 1, 2) for player [ X ]: " << endl;
-        cin >> r;
-        counter += 1;
-    } while (!checkBoundary(r));
-
-    do
-    {
-        cout << "[" << counter << "]"
+        cin >> x;
+        cout << "[" << counter << ">"
              << "Now enter a COLUMN (0, 1, 2) for player [ X ]: " << endl;
-        cin >> c;
+        cin >> y;
         counter += 1;
-    } while (!checkBoundary(c));
+    } while (!checkBoundary(x, &counter));
 
-    move[c][r] = mark;
+    move[x][y] = mark;
+
+    cout << "The true value: " << move[x][y] << endl;
+}
+
+bool isWon(char mark, char ticTacToe[][INDEX])
+{
+    for (int a = 0; a < INDEX; a++)
+    {
+        for (int b = 0; b < INDEX; b++)
+        {
+            cout << "BEFORE IF-STATEMENT => " << ticTacToe[a][b] << endl;
+            if (ticTacToe[a][b] == mark)
+            {
+                cout << "TEST - TEST - TEST => " << ticTacToe[a][b] << endl;
+                return 1;
+            }
+        }
+    }
+
+    return 0;
 }
 
 /*
-bool isWon(char, char[][3]);
 bool isDraw(char[][3]);
 */
 #endif

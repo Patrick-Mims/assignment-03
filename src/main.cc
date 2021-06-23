@@ -8,24 +8,31 @@ using namespace std;
 
 void displayBoard(char[][INDEX]);
 void makeAMove(char[][INDEX], char);
+bool isWon(char, char[][INDEX]);
 /*
-bool isWon(char, char[][3]);
 bool isDraw(char[][3]);
 */
 
 int main(void)
 {
 	char board[3][3] = {
-		{'A', 'B', 'C'},
-		{'D', 'E', 'F'},
-		{'G', 'H', 'I'}};
+		{' ', ' ', ' '},
+		{' ', ' ', ' '},
+		{' ', ' ', ' '}};
 
 	displayBoard(board);
 
 	while (1)
 	{
 		makeAMove(board, 'x');
+		cout << "From main: " << board[0][1] << endl;
 		displayBoard(board);
+
+		if (isWon('o', board))
+		{
+			cout << "X player won" << endl;
+			return 0;
+		}
 	}
 
 	/*
