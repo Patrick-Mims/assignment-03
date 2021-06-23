@@ -1,6 +1,7 @@
 #ifndef _TTT_H
 #define _TTT_H
-#define COLUMN 3
+
+#define THREE 3
 
 using namespace std;
 
@@ -12,14 +13,14 @@ int checkBoundary(int a)
     return 0;
 }
 
-void displayBoard(char board[][COLUMN])
+void displayBoard(char board[][THREE])
 {
     cout << "-------------";
-    for (int i = 0; i < COLUMN; i++)
+    for (int i = 0; i < THREE; i++)
     {
         cout << endl;
         cout << "| ";
-        for (int j = 0; j < COLUMN; j++)
+        for (int j = 0; j < THREE; j++)
         {
             cout << board[i][j] << " | ";
         }

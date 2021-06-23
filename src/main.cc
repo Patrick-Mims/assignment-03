@@ -6,8 +6,8 @@
 
 using namespace std;
 
-void displayBoard(char[][3]);
-void makeAMove(char[][3], char);
+void displayBoard(char[][THREE]);
+void makeAMove(char[][THREE], char);
 /*
 bool isWon(char, char[][3]);
 bool isDraw(char[][3]);
