@@ -26,29 +26,11 @@ int main(void)
 	{
 		makeAMove(board, 'x');
 		displayBoard(board);
+		isWinner('x', board);
+
 		makeAMove(board, 'o');
 		displayBoard(board);
-
-		if (board)
-		{
-			static int x = 0;
-
-			for (int i = 0; i < INDEX; i++)
-			{
-				for (int j = 0; j < INDEX; j++)
-				{
-					if ((board[i][j] == 'x') || (board[i][j] == 'y'))
-					{
-						x++;
-						cout << " " << x << "<=x y=>" << x << endl;
-						if (x == 3)
-						{
-							cout << "You won for real" << endl;
-						}
-					}
-				}
-			}
-		}
+		isWinner('o', board);
 	}
 
 	/*

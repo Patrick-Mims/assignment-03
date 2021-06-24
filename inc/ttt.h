@@ -58,45 +58,83 @@ void makeAMove(char move[][INDEX], char mark)
     move[x][y] = mark;
 }
 
-bool isWon(char mark, char ticTacToe[][INDEX])
+bool isWinner(char mark, char ticTacToe[][INDEX])
 {
-    for (int a = 0; a < INDEX; a++)
+    static int threeInARow = 0;
+    int x = 0;
+    int y = 0;
+    cout << "isWinner(): " << threeInARow++ << endl;
+    for (int i = 0; i < INDEX; i++)
     {
-        for (int b = 0; b < INDEX; b++)
+        for (int j = 0; j < INDEX; j++)
         {
-            cout << "BEFORE IF-STATEMENT => " << ticTacToe[a][b] << endl;
-            if (ticTacToe[a][b] == mark)
+            switch (ticTacToe[i][j])
             {
-                cout << "TEST - TEST - TEST => " << ticTacToe[a][b] << endl;
-                return 1;
+            case 'x':
+                x++;
+                cout << "case statement => x " << x << endl;
+                /*
+                if (x == 3)
+                {
+                    "You Won!";
+                    return 1;
+                }
+                */
+                break;
+            case 'o':
+                y++;
+                cout << "case statement => y " << y << endl;
+                /*
+                if (y == 3)
+                {
+                    "You Won!";
+                    return 1;
+                }
+                */
+                break;
+            }
+            /*
+            if (ticTacToe[0][j] == mark)
+            {
+                cout << "::::" << ticTacToe[0][j] << endl;
+                threeInARow++;
+                if (threeInARow == 3)
+                {
+                    cout << mark << " Won!";
+                }
+                else
+                {
+                    cout << "There is no winner yet..." << endl;
+                }
+                return 0;
+            }
+            */
+        }
+    }
+    return 1;
+}
+/*
+    if (ticTacToe)
+    {
+        static int x = 0;
+
+        for (int i = 0; i < INDEX; i++)
+        {
+            for (int j = 0; j < INDEX; j++)
+            {
+                if ((ticTacToe[i][j] == 'x') || (ticTacToe[i][j] == 'y'))
+                {
+                    x++;
+                    cout << " " << x << "<=x y=>" << x << endl;
+                    if (x == 3)
+                    {
+                        cout << "You won for real" << endl;
+                    }
+                }
             }
         }
     }
-    /*
-		if (board)
-		{
-			static int x = 0;
-
-			for (int i = 0; i < INDEX; i++)
-			{
-				for (int j = 0; j < INDEX; j++)
-				{
-					if ((board[i][j] == 'x') || (board[i][j] == 'y'))
-					{
-						x++;
-						cout << " " << x << "<=x y=>" << x << endl;
-						if (x == 3)
-						{
-							cout << "You won for real" << endl;
-						}
-					}
-				}
-			}
-		}
     */
-
-    return 0;
-}
 
 //bool isDraw(char[][3]);
 #endif
