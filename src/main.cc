@@ -25,15 +25,44 @@ int main(void)
 	while (1)
 	{
 		makeAMove(board, 'x');
-		cout << "From main: " << board[0][1] << endl;
+		displayBoard(board);
+		makeAMove(board, 'o');
 		displayBoard(board);
 
-		if (isWon('o', board))
+		if (board)
+		{
+			static int x = 0;
+
+			for (int i = 0; i < INDEX; i++)
+			{
+				for (int j = 0; j < INDEX; j++)
+				{
+					if ((board[i][j] == 'x') || (board[i][j] == 'y'))
+					{
+						x++;
+						cout << " " << x << "<=x y=>" << x << endl;
+						if (x == 3)
+						{
+							cout << "You won for real" << endl;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/*
+		if (isWon('x', board))
 		{
 			cout << "X player won" << endl;
 			return 0;
+		} else if(isDraw(board)) {
+			cout << "No Winner" << endl;
+			return 0;
 		}
-	}
+
+		or
+
 
 	/*
 	while (true)
