@@ -68,31 +68,32 @@ bool isWinner(char mark, char ticTacToe[][INDEX])
     {
         for (int j = 0; j < INDEX; j++)
         {
-            switch (ticTacToe[i][j])
+            /*
+            if (ticTacToe[i][j] != ' ')
             {
-            case 'x':
-                x++;
-                cout << "case statement => x " << x << endl;
-                /*
-                if (x == 3)
+                switch (ticTacToe[i][j])
                 {
-                    "You Won!";
-                    return 1;
+                case 'x':
+                    x++;
+                    cout << "case statement => x " << x << endl;
+                    if (x == 3)
+                    {
+                        cout << "You Won!" << endl;
+                        return 1;
+                    }
+                    break;
+                case 'o':
+                    y++;
+                    cout << "case statement => y " << y << endl;
+                    if (y == 3)
+                    {
+                        cout << "You Won!" << endl;
+                        return 1;
+                    }
+                    break;
                 }
-                */
-                break;
-            case 'o':
-                y++;
-                cout << "case statement => y " << y << endl;
-                /*
-                if (y == 3)
-                {
-                    "You Won!";
-                    return 1;
-                }
-                */
-                break;
             }
+            */
             /*
             if (ticTacToe[0][j] == mark)
             {

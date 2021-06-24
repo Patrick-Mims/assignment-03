@@ -1,0 +1,1 @@
+/usr/bin/x86_64-linux-gnu-g++-7 -O3 -DNDEBUG CMakeFiles/assignment.dir/src/main.cc.o -o assignment 

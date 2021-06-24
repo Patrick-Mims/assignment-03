@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/patrick/code/cpp/2021/sfsu/340/assignment-03/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7  -I/home/patrick/code/cpp/2021/sfsu/340/assignment-03/inc -I/home/patrick/code/cpp/2021/sfsu/340/assignment-03/build -O3 -DNDEBUG -o CMakeFiles/assignment.dir/src/main.cc.o -c /home/patrick/code/cpp/2021/sfsu/340/assignment-03/src/main.cc",
+  "file": "/home/patrick/code/cpp/2021/sfsu/340/assignment-03/src/main.cc"
+}
+]
