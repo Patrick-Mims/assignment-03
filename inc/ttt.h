@@ -58,6 +58,7 @@ void makeAMove(char move[][INDEX], char mark)
     move[x][y] = mark;
 }
 
+/* check for three in a row */
 bool isWinner(char mark, char ticTacToe[][INDEX])
 {
     int three_in_a_row = 0;
@@ -72,7 +73,7 @@ bool isWinner(char mark, char ticTacToe[][INDEX])
                 three_in_a_row += 1;
                 if (three_in_a_row == 3)
                 {
-                    cout << "x you won!" << endl;
+                    cout << "'x' you won!" << endl;
                     exit(0);
                 }
             }
@@ -81,7 +82,7 @@ bool isWinner(char mark, char ticTacToe[][INDEX])
                 three_in_a_row += 1;
                 if (three_in_a_row == 3)
                 {
-                    cout << "o you won!" << endl;
+                    cout << "'o' you won!" << endl;
                     exit(0);
                 }
             }
