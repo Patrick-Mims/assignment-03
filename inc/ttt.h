@@ -5,6 +5,7 @@
 
 using namespace std;
 
+/* check if the value entered is within the boundaries (0, 1, 2) */
 int checkBoundary(int a, int *b)
 {
     *(b - 1);
@@ -14,6 +15,7 @@ int checkBoundary(int a, int *b)
     return 0;
 }
 
+/* display board */
 void displayBoard(char board[][INDEX])
 {
     cout << "-------------";
