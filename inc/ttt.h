@@ -73,6 +73,7 @@ bool isWinner(char mark, char ticTacToe[][INDEX])
                 if (three_in_a_row == 3)
                 {
                     cout << "x you won!" << endl;
+                    exit(0);
                 }
             }
             else if ((ticTacToe[0][i] == 'o'))
@@ -81,6 +82,7 @@ bool isWinner(char mark, char ticTacToe[][INDEX])
                 if (three_in_a_row == 3)
                 {
                     cout << "o you won!" << endl;
+                    exit(0);
                 }
             }
         }
