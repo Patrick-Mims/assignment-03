@@ -40,8 +40,7 @@ void makeAMove(char move[][INDEX], char mark)
     /* Check to see if the value entered is greater than or equal to zero, and less than or equal to 3 */
     do
     {
-        cout << "[" << counter << ">"
-             << "Enter a ROW (0, 1, 2) for player [" << mark << "]: ";
+        cout << "Move: " << counter << " Enter a ROW (0, 1, 2) for player [" << mark << "]: ";
         cin >> x;
         counter += 1;
     } while (!checkBoundary(x, &counter));
@@ -49,8 +48,7 @@ void makeAMove(char move[][INDEX], char mark)
     /* Check to see if the value entered is greater than or equal to zero, and less than or equal to 3 */
     do
     {
-        cout << "[" << counter << ">"
-             << "Enter a COLUMN (0, 1, 2) for player [" << mark << "]: ";
+        cout << "Move: " << counter << " Enter a COLUMN (0, 1, 2) for player [" << mark << "]: ";
         cin >> y;
     } while (!checkBoundary(y, &counter));
 
